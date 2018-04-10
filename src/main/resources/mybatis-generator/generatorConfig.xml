@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="/Users/huzhanfei/.m2/repository/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar"/>
+    <context id="BlogWaver" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="prefix" value="cn.javacodes.blogwaver.core"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/blogwaver?useUnicode=TRUE&amp;characterEncoding=utf8"
+                        userId="blogwaver" password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="cn.javacodes.blogwaver.core.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="sql-mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.javacodes.blogwaver.core.repository" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--<table tableName="bw_category" domainObjectName="Category"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="CategoryRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^category_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_comment" domainObjectName="Comment"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="CommentRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^comment_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_link" domainObjectName="Link"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="LinkRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^link_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_media" domainObjectName="Media"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="MediaRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^media_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_message" domainObjectName="Message"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="MessageRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^message_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_module" domainObjectName="Module"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="ModuleRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^module_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_module_metas" domainObjectName="ModuleMeta"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="ModuleMetaRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^meta_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_options" domainObjectName="Option"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="OptionRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^option_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_post" domainObjectName="Post"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="PostRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^post_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_post_categories" domainObjectName="PostCategory"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="PostCategoryRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="bw_post_metas" domainObjectName="PostMeta"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="PostMetaRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^meta_" replaceString="" />-->
+        <!--</table>-->
+        <!--<table tableName="bw_post_tags" domainObjectName="PostTag"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="PostTagRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="bw_tag" domainObjectName="Tag"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="TagRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^tag_" replaceString="" />-->
+        <!--</table>-->
+        <table tableName="bw_user" domainObjectName="User"
+               enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByPrimaryKey="true" enableInsert="true"
+               enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+               mapperName="UserRepository">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="^user_" replaceString="" />
+        </table>
+        <!--<table tableName="bw_user_metas" domainObjectName="UserMeta"-->
+               <!--enableCountByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByPrimaryKey="true" enableInsert="true"-->
+               <!--enableDeleteByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
+               <!--mapperName="UserMetaRepository">-->
+            <!--<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^meta_" replaceString="" />-->
+        <!--</table>-->
+
+
+    </context>
+
+</generatorConfiguration>

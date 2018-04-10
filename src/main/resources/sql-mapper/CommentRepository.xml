@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.CommentRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Comment">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="comment_author" jdbcType="VARCHAR" property="author" />
+    <result column="comment_author_site" jdbcType="VARCHAR" property="authorSite" />
+    <result column="comment_author_email" jdbcType="VARCHAR" property="authorEmail" />
+    <result column="comment_author_ip" jdbcType="VARCHAR" property="authorIp" />
+    <result column="comment_agent" jdbcType="VARCHAR" property="agent" />
+    <result column="comment_date" jdbcType="TIMESTAMP" property="date" />
+    <result column="comment_parent" jdbcType="BIGINT" property="parent" />
+    <result column="comment_status" jdbcType="SMALLINT" property="status" />
+    <result column="comment_user_id" jdbcType="BIGINT" property="userId" />
+    <result column="comment_post_id" jdbcType="BIGINT" property="postId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.javacodes.blogwaver.entity.Comment">
+    <result column="comment_content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, comment_author, comment_author_site, comment_author_email, comment_author_ip, 
+    comment_agent, comment_date, comment_parent, comment_status, comment_user_id, comment_post_id
+  </sql>
+  <sql id="Blob_Column_List">
+    comment_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bw_comment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_comment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Comment" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_comment (comment_author, comment_author_site, comment_author_email, 
+      comment_author_ip, comment_agent, comment_date, 
+      comment_parent, comment_status, comment_user_id, 
+      comment_post_id, comment_content)
+    values (#{author,jdbcType=VARCHAR}, #{authorSite,jdbcType=VARCHAR}, #{authorEmail,jdbcType=VARCHAR}, 
+      #{authorIp,jdbcType=VARCHAR}, #{agent,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
+      #{parent,jdbcType=BIGINT}, #{status,jdbcType=SMALLINT}, #{userId,jdbcType=BIGINT}, 
+      #{postId,jdbcType=BIGINT}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Comment" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="author != null">
+        comment_author,
+      </if>
+      <if test="authorSite != null">
+        comment_author_site,
+      </if>
+      <if test="authorEmail != null">
+        comment_author_email,
+      </if>
+      <if test="authorIp != null">
+        comment_author_ip,
+      </if>
+      <if test="agent != null">
+        comment_agent,
+      </if>
+      <if test="date != null">
+        comment_date,
+      </if>
+      <if test="parent != null">
+        comment_parent,
+      </if>
+      <if test="status != null">
+        comment_status,
+      </if>
+      <if test="userId != null">
+        comment_user_id,
+      </if>
+      <if test="postId != null">
+        comment_post_id,
+      </if>
+      <if test="content != null">
+        comment_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorSite != null">
+        #{authorSite,jdbcType=VARCHAR},
+      </if>
+      <if test="authorEmail != null">
+        #{authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="authorIp != null">
+        #{authorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="agent != null">
+        #{agent,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parent != null">
+        #{parent,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="postId != null">
+        #{postId,jdbcType=BIGINT},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Comment">
+    update bw_comment
+    <set>
+      <if test="author != null">
+        comment_author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorSite != null">
+        comment_author_site = #{authorSite,jdbcType=VARCHAR},
+      </if>
+      <if test="authorEmail != null">
+        comment_author_email = #{authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="authorIp != null">
+        comment_author_ip = #{authorIp,jdbcType=VARCHAR},
+      </if>
+      <if test="agent != null">
+        comment_agent = #{agent,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        comment_date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="parent != null">
+        comment_parent = #{parent,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        comment_status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="userId != null">
+        comment_user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="postId != null">
+        comment_post_id = #{postId,jdbcType=BIGINT},
+      </if>
+      <if test="content != null">
+        comment_content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.javacodes.blogwaver.entity.Comment">
+    update bw_comment
+    set comment_author = #{author,jdbcType=VARCHAR},
+      comment_author_site = #{authorSite,jdbcType=VARCHAR},
+      comment_author_email = #{authorEmail,jdbcType=VARCHAR},
+      comment_author_ip = #{authorIp,jdbcType=VARCHAR},
+      comment_agent = #{agent,jdbcType=VARCHAR},
+      comment_date = #{date,jdbcType=TIMESTAMP},
+      comment_parent = #{parent,jdbcType=BIGINT},
+      comment_status = #{status,jdbcType=SMALLINT},
+      comment_user_id = #{userId,jdbcType=BIGINT},
+      comment_post_id = #{postId,jdbcType=BIGINT},
+      comment_content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Comment">
+    update bw_comment
+    set comment_author = #{author,jdbcType=VARCHAR},
+      comment_author_site = #{authorSite,jdbcType=VARCHAR},
+      comment_author_email = #{authorEmail,jdbcType=VARCHAR},
+      comment_author_ip = #{authorIp,jdbcType=VARCHAR},
+      comment_agent = #{agent,jdbcType=VARCHAR},
+      comment_date = #{date,jdbcType=TIMESTAMP},
+      comment_parent = #{parent,jdbcType=BIGINT},
+      comment_status = #{status,jdbcType=SMALLINT},
+      comment_user_id = #{userId,jdbcType=BIGINT},
+      comment_post_id = #{postId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

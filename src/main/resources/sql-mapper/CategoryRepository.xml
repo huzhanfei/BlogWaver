@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.CategoryRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Category">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_name" jdbcType="VARCHAR" property="name" />
+    <result column="category_uri" jdbcType="VARCHAR" property="uri" />
+    <result column="category_description" jdbcType="VARCHAR" property="description" />
+    <result column="category_parent" jdbcType="BIGINT" property="parent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, category_name, category_uri, category_description, category_parent
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bw_category
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_category
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Category" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_category (category_name, category_uri, category_description, 
+      category_parent)
+    values (#{name,jdbcType=VARCHAR}, #{uri,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{parent,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Category" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        category_name,
+      </if>
+      <if test="uri != null">
+        category_uri,
+      </if>
+      <if test="description != null">
+        category_description,
+      </if>
+      <if test="parent != null">
+        category_parent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="uri != null">
+        #{uri,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="parent != null">
+        #{parent,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Category">
+    update bw_category
+    <set>
+      <if test="name != null">
+        category_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="uri != null">
+        category_uri = #{uri,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        category_description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="parent != null">
+        category_parent = #{parent,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Category">
+    update bw_category
+    set category_name = #{name,jdbcType=VARCHAR},
+      category_uri = #{uri,jdbcType=VARCHAR},
+      category_description = #{description,jdbcType=VARCHAR},
+      category_parent = #{parent,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

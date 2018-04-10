@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.ModuleRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Module">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="module_name" jdbcType="VARCHAR" property="name" />
+    <result column="module_status" jdbcType="SMALLINT" property="status" />
+    <result column="module_type" jdbcType="SMALLINT" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, module_name, module_status, module_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bw_module
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_module
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Module" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_module (module_name, module_status, module_type
+      )
+    values (#{name,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{type,jdbcType=SMALLINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Module" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_module
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        module_name,
+      </if>
+      <if test="status != null">
+        module_status,
+      </if>
+      <if test="type != null">
+        module_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Module">
+    update bw_module
+    <set>
+      <if test="name != null">
+        module_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        module_status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="type != null">
+        module_type = #{type,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Module">
+    update bw_module
+    set module_name = #{name,jdbcType=VARCHAR},
+      module_status = #{status,jdbcType=SMALLINT},
+      module_type = #{type,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

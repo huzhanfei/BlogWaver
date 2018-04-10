@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.TagRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Tag">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="tag_name" jdbcType="VARCHAR" property="name" />
+    <result column="tag_ref_count" jdbcType="INTEGER" property="refCount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tag_name, tag_ref_count
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bw_tag
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_tag
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Tag" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_tag (tag_name, tag_ref_count)
+    values (#{name,jdbcType=VARCHAR}, #{refCount,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Tag" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_tag
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        tag_name,
+      </if>
+      <if test="refCount != null">
+        tag_ref_count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="refCount != null">
+        #{refCount,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Tag">
+    update bw_tag
+    <set>
+      <if test="name != null">
+        tag_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="refCount != null">
+        tag_ref_count = #{refCount,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Tag">
+    update bw_tag
+    set tag_name = #{name,jdbcType=VARCHAR},
+      tag_ref_count = #{refCount,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

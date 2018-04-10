@@ -1,0 +1,59 @@
+server:
+  undertow:
+    io-threads: 4
+    worker-threads: 20
+    buffer-size: 1024
+    direct-buffers: true
+  port: 8082
+spring:
+  application:
+    name: BlogWaver
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
+    suffix: .ftl
+    template-loader-path: classpath:templates
+    request-context-attribute: request
+    settings:
+      auto_import: common/spring.ftl as spring
+      object_wrapper: no.api.freemarker.java8.Java8ObjectWrapper(2.3.28)
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/blogwaver?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: blogwaver
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      pool-name: BlogWaverHikariCP
+mybatis:
+  mapper-locations: classpath:/sql-mapper/*.xml
+  type-aliases-package: cn.javacodes.blogwaver.entity
+  type-handlers-package: cn.javacodes.blogwaver.handler
+pagehelper:
+  offset-as-page-num: true
+  row-bounds-with-count: true
+  page-size-zero: true
+  reasonable: true
+  helper-dialect: mysql
+  support-methods-arguments: true
+
+
+
+
+
+
+

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.MediaRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Media">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="media_name" jdbcType="VARCHAR" property="name" />
+    <result column="media_type" jdbcType="VARCHAR" property="type" />
+    <result column="media_url" jdbcType="VARCHAR" property="url" />
+    <result column="media_author" jdbcType="VARCHAR" property="author" />
+    <result column="media_create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="media_description" jdbcType="VARCHAR" property="description" />
+    <result column="media_alt" jdbcType="VARCHAR" property="alt" />
+    <result column="media_source" jdbcType="VARCHAR" property="source" />
+    <result column="media_filepath" jdbcType="VARCHAR" property="filepath" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, media_name, media_type, media_url, media_author, media_create_date, media_description, 
+    media_alt, media_source, media_filepath
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bw_media
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_media
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Media" useGeneratedKeys="true" keyProperty="id">
+
+    insert into bw_media (media_name, media_type, media_url, 
+      media_author, media_create_date, media_description, 
+      media_alt, media_source, media_filepath
+      )
+    values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{author,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, 
+      #{alt,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, #{filepath,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Media" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_media
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        media_name,
+      </if>
+      <if test="type != null">
+        media_type,
+      </if>
+      <if test="url != null">
+        media_url,
+      </if>
+      <if test="author != null">
+        media_author,
+      </if>
+      <if test="createDate != null">
+        media_create_date,
+      </if>
+      <if test="description != null">
+        media_description,
+      </if>
+      <if test="alt != null">
+        media_alt,
+      </if>
+      <if test="source != null">
+        media_source,
+      </if>
+      <if test="filepath != null">
+        media_filepath,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="alt != null">
+        #{alt,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="filepath != null">
+        #{filepath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Media">
+    update bw_media
+    <set>
+      <if test="name != null">
+        media_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        media_type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        media_url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        media_author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        media_create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        media_description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="alt != null">
+        media_alt = #{alt,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        media_source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="filepath != null">
+        media_filepath = #{filepath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Media">
+    update bw_media
+    set media_name = #{name,jdbcType=VARCHAR},
+      media_type = #{type,jdbcType=VARCHAR},
+      media_url = #{url,jdbcType=VARCHAR},
+      media_author = #{author,jdbcType=VARCHAR},
+      media_create_date = #{createDate,jdbcType=TIMESTAMP},
+      media_description = #{description,jdbcType=VARCHAR},
+      media_alt = #{alt,jdbcType=VARCHAR},
+      media_source = #{source,jdbcType=VARCHAR},
+      media_filepath = #{filepath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.PostRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Post">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="post_title" jdbcType="VARCHAR" property="title" />
+    <result column="post_author" jdbcType="VARCHAR" property="author" />
+    <result column="post_editor_type" jdbcType="SMALLINT" property="editorType" />
+    <result column="post_create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="post_update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="post_link" jdbcType="VARCHAR" property="link" />
+    <result column="post_type" jdbcType="SMALLINT" property="type" />
+    <result column="post_content_type" jdbcType="SMALLINT" property="contentType" />
+    <result column="post_status" jdbcType="SMALLINT" property="status" />
+    <result column="post_permission" jdbcType="SMALLINT" property="permission" />
+    <result column="post_password" jdbcType="VARCHAR" property="password" />
+    <result column="post_summary" jdbcType="VARCHAR" property="summary" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.javacodes.blogwaver.entity.Post">
+    <result column="post_content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, post_title, post_author, post_editor_type, post_create_date, post_update_date, 
+    post_link, post_type, post_content_type, post_status, post_permission, post_password, 
+    post_summary
+  </sql>
+  <sql id="Blob_Column_List">
+    post_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bw_post
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_post
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Post" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_post (post_title, post_author, post_editor_type, 
+      post_create_date, post_update_date, post_link, 
+      post_type, post_content_type, post_status, 
+      post_permission, post_password, post_summary, 
+      post_content)
+    values (#{title,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{editorType,jdbcType=SMALLINT}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{link,jdbcType=VARCHAR}, 
+      #{type,jdbcType=SMALLINT}, #{contentType,jdbcType=SMALLINT}, #{status,jdbcType=SMALLINT}, 
+      #{permission,jdbcType=SMALLINT}, #{password,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Post" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_post
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        post_title,
+      </if>
+      <if test="author != null">
+        post_author,
+      </if>
+      <if test="editorType != null">
+        post_editor_type,
+      </if>
+      <if test="createDate != null">
+        post_create_date,
+      </if>
+      <if test="updateDate != null">
+        post_update_date,
+      </if>
+      <if test="link != null">
+        post_link,
+      </if>
+      <if test="type != null">
+        post_type,
+      </if>
+      <if test="contentType != null">
+        post_content_type,
+      </if>
+      <if test="status != null">
+        post_status,
+      </if>
+      <if test="permission != null">
+        post_permission,
+      </if>
+      <if test="password != null">
+        post_password,
+      </if>
+      <if test="summary != null">
+        post_summary,
+      </if>
+      <if test="content != null">
+        post_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="editorType != null">
+        #{editorType,jdbcType=SMALLINT},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="link != null">
+        #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="contentType != null">
+        #{contentType,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="permission != null">
+        #{permission,jdbcType=SMALLINT},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null">
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Post">
+    update bw_post
+    <set>
+      <if test="title != null">
+        post_title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        post_author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="editorType != null">
+        post_editor_type = #{editorType,jdbcType=SMALLINT},
+      </if>
+      <if test="createDate != null">
+        post_create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        post_update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="link != null">
+        post_link = #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        post_type = #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="contentType != null">
+        post_content_type = #{contentType,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null">
+        post_status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="permission != null">
+        post_permission = #{permission,jdbcType=SMALLINT},
+      </if>
+      <if test="password != null">
+        post_password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null">
+        post_summary = #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        post_content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.javacodes.blogwaver.entity.Post">
+    update bw_post
+    set post_title = #{title,jdbcType=VARCHAR},
+      post_author = #{author,jdbcType=VARCHAR},
+      post_editor_type = #{editorType,jdbcType=SMALLINT},
+      post_create_date = #{createDate,jdbcType=TIMESTAMP},
+      post_update_date = #{updateDate,jdbcType=TIMESTAMP},
+      post_link = #{link,jdbcType=VARCHAR},
+      post_type = #{type,jdbcType=SMALLINT},
+      post_content_type = #{contentType,jdbcType=SMALLINT},
+      post_status = #{status,jdbcType=SMALLINT},
+      post_permission = #{permission,jdbcType=SMALLINT},
+      post_password = #{password,jdbcType=VARCHAR},
+      post_summary = #{summary,jdbcType=VARCHAR},
+      post_content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Post">
+    update bw_post
+    set post_title = #{title,jdbcType=VARCHAR},
+      post_author = #{author,jdbcType=VARCHAR},
+      post_editor_type = #{editorType,jdbcType=SMALLINT},
+      post_create_date = #{createDate,jdbcType=TIMESTAMP},
+      post_update_date = #{updateDate,jdbcType=TIMESTAMP},
+      post_link = #{link,jdbcType=VARCHAR},
+      post_type = #{type,jdbcType=SMALLINT},
+      post_content_type = #{contentType,jdbcType=SMALLINT},
+      post_status = #{status,jdbcType=SMALLINT},
+      post_permission = #{permission,jdbcType=SMALLINT},
+      post_password = #{password,jdbcType=VARCHAR},
+      post_summary = #{summary,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

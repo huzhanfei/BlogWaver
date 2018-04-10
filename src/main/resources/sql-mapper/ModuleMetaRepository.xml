@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.ModuleMetaRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.ModuleMeta">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="module_id" jdbcType="BIGINT" property="moduleId" />
+    <result column="meta_name" jdbcType="VARCHAR" property="name" />
+    <result column="meta_value" jdbcType="VARCHAR" property="value" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, module_id, meta_name, meta_value
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bw_module_metas
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_module_metas
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.ModuleMeta" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_module_metas (module_id, meta_name, meta_value
+      )
+    values (#{moduleId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.ModuleMeta" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_module_metas
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="moduleId != null">
+        module_id,
+      </if>
+      <if test="name != null">
+        meta_name,
+      </if>
+      <if test="value != null">
+        meta_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="moduleId != null">
+        #{moduleId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.ModuleMeta">
+    update bw_module_metas
+    <set>
+      <if test="moduleId != null">
+        module_id = #{moduleId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        meta_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        meta_value = #{value,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.ModuleMeta">
+    update bw_module_metas
+    set module_id = #{moduleId,jdbcType=BIGINT},
+      meta_name = #{name,jdbcType=VARCHAR},
+      meta_value = #{value,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

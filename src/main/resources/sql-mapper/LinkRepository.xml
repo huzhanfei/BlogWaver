@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.javacodes.blogwaver.repository.LinkRepository">
+  <resultMap id="BaseResultMap" type="cn.javacodes.blogwaver.entity.Link">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="link_name" jdbcType="VARCHAR" property="name" />
+    <result column="link_address" jdbcType="VARCHAR" property="address" />
+    <result column="link_description" jdbcType="VARCHAR" property="description" />
+    <result column="link_order" jdbcType="INTEGER" property="order" />
+    <result column="link_status" jdbcType="SMALLINT" property="status"/>
+    <result column="link_tag" jdbcType="VARCHAR" property="tag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, link_name, link_address, link_description, link_order, link_status, link_tag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bw_link
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bw_link
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.javacodes.blogwaver.entity.Link" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_link (link_name, link_address, link_description, 
+      link_order, link_status, link_tag
+      )
+    values (#{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{order,jdbcType=INTEGER}, #{status,jdbcType=SMALLINT}, #{tag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.javacodes.blogwaver.entity.Link" useGeneratedKeys="true" keyProperty="id">
+    insert into bw_link
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        link_name,
+      </if>
+      <if test="address != null">
+        link_address,
+      </if>
+      <if test="description != null">
+        link_description,
+      </if>
+      <if test="order != null">
+        link_order,
+      </if>
+      <if test="status != null">
+        link_status,
+      </if>
+      <if test="tag != null">
+        link_tag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null">
+        #{order,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.javacodes.blogwaver.entity.Link">
+    update bw_link
+    <set>
+      <if test="name != null">
+        link_name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        link_address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        link_description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null">
+        link_order = #{order,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        link_status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="tag != null">
+        link_tag = #{tag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.javacodes.blogwaver.entity.Link">
+    update bw_link
+    set link_name = #{name,jdbcType=VARCHAR},
+      link_address = #{address,jdbcType=VARCHAR},
+      link_description = #{description,jdbcType=VARCHAR},
+      link_order = #{order,jdbcType=INTEGER},
+      link_status = #{status,jdbcType=SMALLINT},
+      link_tag = #{tag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
