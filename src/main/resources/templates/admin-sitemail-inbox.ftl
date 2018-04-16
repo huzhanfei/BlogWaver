@@ -1,22 +1,23 @@
 <#import "common/admin-common.ftl" as common>
 <#import "common/resource-import.ftl" as res>
 <@common.content>
-<@res.cssRef url="/libs/AdminLTE/plugins/iCheck/flat/blue.css"/>
-<@res.cssRef url="/libs/AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
-<section class="content-header">
-    <h1><@spring.message code="sitemail.inbox"/></h1>
-    <ol class="breadcrumb">
-        <li><a href="${basePath}/admin/dashboard"><i class="fa fa-dashboard"></i><@spring.message code="sitemail.home"/></a></li>
-        <li><a href="${basePath}/admin/sitemail/inbox"><@spring.message code="sitemail.inbox"/></a></li>
-    </ol>
-</section>
+<@res.cssRefV url="/assets/libs/icheck/skins/flat/blue.css"/>
+    <@res.cssRefV url="/assets/libs/datatables/media/css/dataTables.bootstrap.min.css"/>
 <!-- Main content -->
 <section class="content">
     <div class="row">
         <!-- /.col -->
         <div class="col-md-12">
             <div class="box box-primary">
-                <div class="box-header with-border">
+                <div class="box-header">
+                    <h3 class="box-title">收件箱</h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                    </div>
+                    <!-- /. tools -->
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
@@ -118,9 +119,9 @@
     <!-- /.row -->
 </section>
 <!-- /.Main content -->
-    <@res.jsRef url="/libs/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.js"/>
-    <@res.jsRef url="/libs/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.js"/>
-    <@res.jsRef url="/libs/AdminLTE/plugins/iCheck/icheck.js"/>
+    <@res.jsRefV url="/assets/libs/datatables/media/js/jquery.dataTables.min.js"/>
+    <@res.jsRefV url="/assets/libs/datatables/media/js/dataTables.bootstrap.min.js"/>
+    <@res.jsRefV url="/assets/libs/icheck/icheck.min.js"/>
 <script>
 
     function filterGlobal(table, value) {
@@ -137,28 +138,29 @@
             'info': true,
             'autoWidth': false,
             'dom': 'rtip',
+            "order": [[ 4, "desc" ]],
             'columnDefs': [{'orderable': false, 'targets': 0}],
             'language': {
-                "sProcessing": "<@spring.message code="sitemail.sProcessing"/>",
-                "sLengthMenu": "<@spring.message code="sitemail.sLengthMenu"/>",
-                "sZeroRecords": "<@spring.message code="sitemail.sZeroRecords"/>",
-                "sInfo": "<@spring.message code="sitemail.sInfo"/>",
-                "sInfoEmpty": "<@spring.message code="sitemail.sInfoEmpty"/>",
-                "sInfoFiltered": "<@spring.message code="sitemail.sInfoFiltered"/>",
-                "sInfoPostFix": "<@spring.message code="sitemail.sInfoPostFix"/>",
-                "sSearch": "<@spring.message code="sitemail.sSearch"/>",
-                "sEmptyTable": "<@spring.message code="sitemail.sEmptyTable"/>",
-                "sLoadingRecords": "<@spring.message code="sitemail.sLoadingRecords"/>",
-                "sInfoThousands": "<@spring.message code="sitemail.sInfoThousands"/>",
+                "sProcessing": "<@spring.message code="datatables.sProcessing"/>",
+                "sLengthMenu": "<@spring.message code="datatables.sLengthMenu"/>",
+                "sZeroRecords": "<@spring.message code="datatables.sZeroRecords"/>",
+                "sInfo": "<@spring.message code="datatables.sInfo"/>",
+                "sInfoEmpty": "<@spring.message code="datatables.sInfoEmpty"/>",
+                "sInfoFiltered": "<@spring.message code="datatables.sInfoFiltered"/>",
+                "sInfoPostFix": "<@spring.message code="datatables.sInfoPostFix"/>",
+                "sSearch": "<@spring.message code="datatables.sSearch"/>",
+                "sEmptyTable": "<@spring.message code="datatables.sEmptyTable"/>",
+                "sLoadingRecords": "<@spring.message code="datatables.sLoadingRecords"/>",
+                "sInfoThousands": "<@spring.message code="datatables.sInfoThousands"/>",
                 "oPaginate": {
-                    "sFirst": "<@spring.message code="sitemail.oPaginate.sFirst"/>",
-                    "sPrevious": "<@spring.message code="sitemail.oPaginate.sPrevious"/>",
-                    "sNext": "<@spring.message code="sitemail.oPaginate.sNext"/>",
-                    "sLast": "<@spring.message code="sitemail.oPaginate.sLast"/>"
+                    "sFirst": "<@spring.message code="datatables.oPaginate.sFirst"/>",
+                    "sPrevious": "<@spring.message code="datatables.oPaginate.sPrevious"/>",
+                    "sNext": "<@spring.message code="datatables.oPaginate.sNext"/>",
+                    "sLast": "<@spring.message code="datatables.oPaginate.sLast"/>"
                 },
                 "oAria": {
-                    "sSortAscending": "<@spring.message code="sitemail.oAria.sSortAscending"/>",
-                    "sSortDescending": "<@spring.message code="sitemail.oAria.sSortDescending"/>"
+                    "sSortAscending": "<@spring.message code="datatables.oAria.sSortAscending"/>",
+                    "sSortDescending": "<@spring.message code="datatables.oAria.sSortDescending"/>"
                 }
             }
         });

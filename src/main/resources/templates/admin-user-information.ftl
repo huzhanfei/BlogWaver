@@ -8,8 +8,8 @@
     <#--mainer-->
 <section class="content">
     <#--plugins-->
-        <@res.jsRef url="/assets/js/dropzone.js"/>
-        <@res.cssRef url="/assets/css/dropzone.css"/>
+        <@res.jsRefV url="/assets/js/dropzone.js"/>
+        <@res.cssRefV url="/assets/css/dropzone.css"/>
     <div class="col-sm-10" id="card">
     <div class="box box-widget widget-user">
         <div class="widget-user-header bg-aqua-active">

@@ -5,6 +5,8 @@ server:
     buffer-size: 1024
     direct-buffers: true
   port: 8082
+  servlet:
+    context-path: /blogwaver
 spring:
   application:
     name: BlogWaver

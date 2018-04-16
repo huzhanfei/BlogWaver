@@ -1,7 +1,7 @@
 <#import "common/admin-common.ftl" as common>
 <#import "common/resource-import.ftl" as res>
-
 <@common.content>
+<@res.cssRefV url="/assets/libs/datatables.net-bs/css/dataTables.bootstrap.css"/>
     <!--header-->
 <section class="content-header">
     <h1>
@@ -113,9 +113,9 @@
 </section>
 
 <#--datatables-->
-    <@res.cssRef url="/libs/AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
-    <@res.jsRef url="/libs/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.js"/>
-    <@res.jsRef url="/libs/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.js"/>
+
+    <@res.jsRefV url="/assets/libs/datatables.net/js/jquery.dataTables.js"/>
+    <@res.jsRefV url="/assets/libs/datatables.net-bs/js/dataTables.bootstrap.js"/>
 <script type="text/javascript">
 
     // datatables

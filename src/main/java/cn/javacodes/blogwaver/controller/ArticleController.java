@@ -31,4 +31,24 @@ public class ArticleController {
         LOGGER.info("initArticleCreatePage");
         return "admin-article-create";
     }
+
+    @RequestMapping(value = "/category", method = RequestMethod.GET)
+    public String initArticleCategoryPage() {
+        LOGGER.info("initArticleCategoryPage");
+        return "admin-article-category";
+    }
+
+    @RequestMapping(value = "/tags", method = RequestMethod.GET)
+    public String initArticleTagsPage() {
+        LOGGER.info("initArticleTagsPage");
+        return "admin-article-tags";
+    }
+
+    @RequestMapping(value = "/draft", method = RequestMethod.GET)
+    public String initArticleDraftPage() {
+        LOGGER.info("initArticleDraftPage");
+        return "admin-article-draft";
+    }
+
+
 }

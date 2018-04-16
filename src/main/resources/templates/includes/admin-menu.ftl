@@ -10,7 +10,7 @@
                 <img src="${basePath}/assets/images/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Eric Hu</p>
+                <p>Jeffrey Hu</p>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> 系统管理员</a>
             </div>
@@ -51,9 +51,21 @@
                             <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.list"/>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.article.category"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.article.tag"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.article.draft"/></a></li>
+                    <li>
+                        <a href="${basePath}/admin/article/category">
+                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.category"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${basePath}/admin/article/tags">
+                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.tag"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${basePath}/admin/article/draft">
+                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.draft"/>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">
@@ -61,8 +73,16 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.page.create"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.page.list"/></a></li>
+                    <li>
+                        <a href="${basePath}/admin/page/create">
+                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.page.create"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${basePath}/admin/page/list">
+                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.page.list"/>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">
@@ -81,14 +101,20 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="${basePath}/admin/sitemail/inbox"><i class="fa fa-circle-o"></i> <@spring.message code="menu.mail.inbox"/></a></li>
-                    <li><a href="${basePath}/admin/sitemail/compose"><i class="fa fa-circle-o"></i> <@spring.message code="menu.mail.compose"/></a></li>
-                    <li><a href="${basePath}/admin/sitemail/draft"><i class="fa fa-circle-o"></i> <@spring.message code="menu.mail.draft"/></a></li>
-                    <li><a href="${basePath}/admin/sitemail/trash"><i class="fa fa-circle-o"></i> <@spring.message code="menu.mail.trash"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/inbox"><i
+                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.inbox"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/compose"><i
+                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.compose"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/draft"><i
+                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.draft"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/trash"><i
+                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.trash"/></a></li>
                 </ul>
             </li>
-            <li><a href="${basePath}/admin/comment/list"><i class="fa fa-comments"></i> <span><@spring.message code="menu.comment"/></span></a></li>
-            <li><a href="${basePath}/admin/user/information"><i class="fa fa-user"></i> <span><@spring.message code="menu.profile"/></span></a></li>
+            <li><a href="${basePath}/admin/comment/list"><i class="fa fa-comments"></i>
+                <span><@spring.message code="menu.comment"/></span></a></li>
+            <li><a href="${basePath}/admin/user/information"><i class="fa fa-user"></i>
+                <span><@spring.message code="menu.profile"/></span></a></li>
 
 
             <li class="header"><span><@spring.message code="menu.system.header"/></span></li>
@@ -107,7 +133,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.plugin.list"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.plugin.install"/></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.plugin.install"/></a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">
@@ -115,8 +142,10 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="${basePath}/admin/user/list"><i class="fa fa-circle-o"></i> <@spring.message code="menu.user.list"/></a></li>
-                    <li><a href="${basePath}/admin/user/create"><i class="fa fa-circle-o"></i> <@spring.message code="menu.user.create"/></a></li>
+                    <li><a href="${basePath}/admin/user/list"><i
+                            class="fa fa-circle-o"></i> <@spring.message code="menu.user.list"/></a></li>
+                    <li><a href="${basePath}/admin/user/create"><i
+                            class="fa fa-circle-o"></i> <@spring.message code="menu.user.create"/></a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -125,7 +154,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.site"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.system"/></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.system"/></a>
+                    </li>
                     <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.link"/></a></li>
                 </ul>
             </li>

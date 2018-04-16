@@ -2,7 +2,7 @@
 <#import "common/resource-import.ftl" as res/>
 
 <@common.content>
-<@res.cssRef url="/assets/css/create.style.css"/>
+<@res.cssRefV url="/assets/css/create.style.css"/>
 <#--mycss-->
     <section class="content-header">
         <h1>

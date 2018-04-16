@@ -42,11 +42,6 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .resourceChain(true)
                 .addResolver(new GzipResourceResolver())
                 .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
-
-        registry.addResourceHandler("/libs/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/")
-                .resourceChain(true)
-                .addResolver(new GzipResourceResolver());
     }
 
 
