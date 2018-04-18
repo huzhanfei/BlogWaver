@@ -1,114 +1,99 @@
-<!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
+<!-- left side start-->
+<div class="left-side sticky-left-side">
 
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+    <!--logo and iconic logo start-->
+    <div class="logo">
+        <a href="${basePath}/admin"><img src="${basePath}/assets/images/logo.png" alt=""></a>
+    </div>
 
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="${basePath}/assets/images/user2-160x160.jpg" class="img-circle" alt="User Image">
+    <div class="logo-icon text-center">
+        <a href="${basePath}/admin"><img src="${basePath}/assets/images/logo_icon.png" alt=""></a>
+    </div>
+    <!--logo and iconic logo end-->
+
+    <div class="left-side-inner">
+        <!-- visible to small devices only -->
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">
+            <div class="media logged-user">
+                <img alt="" src="${basePath}/assets/images/photos/user-avatar.png" class="media-object">
+                <div class="media-body">
+                    <h4><a href="#">Jeffrey Hu</a></h4>
+                    <span>"Hello There..."</span>
+                </div>
             </div>
-            <div class="pull-left info">
-                <p>Jeffrey Hu</p>
-                <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> 系统管理员</a>
-            </div>
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="#"><i class="fa fa-sign-out"></i> <span>注销</span></a></li>
+            </ul>
         </div>
 
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="<@spring.message code="menu.search"/>">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu" data-widget="tree">
-            <li class="header"><span><@spring.message code="menu.common.header"/></span></li>
-            <li><a href="${basePath}/admin/dashboard">
-                <i class="fa fa-dashboard"></i> <span><@spring.message code="menu.dashboard"/></span></a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-edit"></i> <span><@spring.message code="menu.article"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+        <ul class="nav nav-pills nav-stacked custom-nav" id="sidebar_menu">
+            <li>
+                <a href="${basePath}/admin/dashboard">
+                    <i class="fa fa-dashboard"></i> <span><@spring.message code="menu.dashboard"/></span>
                 </a>
-                <ul class="treeview-menu">
+            </li>
+            <li class="menu-list">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span><@spring.message code="menu.article"/></span></a>
+                <ul class="sub-menu-list">
                     <li>
                         <a href="${basePath}/admin/article/create">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.create"/>
+                             <@spring.message code="menu.article.create"/>
                         </a>
                     </li>
                     <li>
                         <a href="${basePath}/admin/article/list">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.list"/>
+                             <@spring.message code="menu.article.list"/>
                         </a>
                     </li>
                     <li>
                         <a href="${basePath}/admin/article/category">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.category"/>
+                             <@spring.message code="menu.article.category"/>
                         </a>
                     </li>
                     <li>
                         <a href="${basePath}/admin/article/tags">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.tag"/>
+                             <@spring.message code="menu.article.tag"/>
                         </a>
                     </li>
                     <li>
                         <a href="${basePath}/admin/article/draft">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.article.draft"/>
+                             <@spring.message code="menu.article.draft"/>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
+            <li class="menu-list">
                 <a href="#"><i class="fa fa-file"></i> <span><@spring.message code="menu.page"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                    
                 </a>
-                <ul class="treeview-menu">
+                <ul class="sub-menu-list">
                     <li>
                         <a href="${basePath}/admin/page/create">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.page.create"/>
+                             <@spring.message code="menu.page.create"/>
                         </a>
                     </li>
                     <li>
                         <a href="${basePath}/admin/page/list">
-                            <i class="fa fa-circle-o"></i> <@spring.message code="menu.page.list"/>
+                             <@spring.message code="menu.page.list"/>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-photo"></i> <span><@spring.message code="menu.media"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+            <li >
+                <a href="${basePath}/admin/media/gallery">
+                    <i class="fa fa-photo"></i> <span><@spring.message code="menu.media"/></span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.media.photo"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.media.video"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.media.music"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.media.other"/></a></li>
-                </ul>
             </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-envelope-open"></i> <span><@spring.message code="menu.mail"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${basePath}/admin/sitemail/inbox"><i
-                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.inbox"/></a></li>
-                    <li><a href="${basePath}/admin/sitemail/compose"><i
-                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.compose"/></a></li>
-                    <li><a href="${basePath}/admin/sitemail/draft"><i
-                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.draft"/></a></li>
-                    <li><a href="${basePath}/admin/sitemail/trash"><i
-                            class="fa fa-circle-o"></i> <@spring.message code="menu.mail.trash"/></a></li>
+            <li class="menu-list">
+                <a href="#"><i class="fa fa-envelope-open"></i> <span><@spring.message code="menu.mail"/></span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="${basePath}/admin/sitemail/compose"> <@spring.message code="menu.mail.compose"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/inbox"> <@spring.message code="menu.mail.inbox"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/sent"> <@spring.message code="menu.mail.sent"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/draft"> <@spring.message code="menu.mail.draft"/></a></li>
+                    <li><a href="${basePath}/admin/sitemail/trash"> <@spring.message code="menu.mail.trash"/></a></li>
                 </ul>
             </li>
             <li><a href="${basePath}/admin/comment/list"><i class="fa fa-comments"></i>
@@ -117,50 +102,41 @@
                 <span><@spring.message code="menu.profile"/></span></a></li>
 
 
-            <li class="header"><span><@spring.message code="menu.system.header"/></span></li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-eye"></i> <span><@spring.message code="menu.view"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.view.nav"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.view.theme"/></a></li>
+            <li class="menu-list">
+                <a href="#"><i class="fa fa-eye"></i> <span><@spring.message code="menu.view"/></span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="#"> <@spring.message code="menu.view.nav"/></a></li>
+                    <li><a href="#"> <@spring.message code="menu.view.theme"/></a></li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-puzzle-piece"></i> <span><@spring.message code="menu.plugin"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.plugin.list"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.plugin.install"/></a>
+            <li class="menu-list">
+                <a href="#"><i class="fa fa-puzzle-piece"></i> <span><@spring.message code="menu.plugin"/></span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="#"> <@spring.message code="menu.plugin.list"/></a></li>
+                    <li><a href="#"> <@spring.message code="menu.plugin.install"/></a>
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-users"></i> <span><@spring.message code="menu.user"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${basePath}/admin/user/list"><i
-                            class="fa fa-circle-o"></i> <@spring.message code="menu.user.list"/></a></li>
-                    <li><a href="${basePath}/admin/user/create"><i
-                            class="fa fa-circle-o"></i> <@spring.message code="menu.user.create"/></a></li>
+            <li class="menu-list">
+                <a href="#"><i class="fa fa-users"></i> <span><@spring.message code="menu.user"/></span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="${basePath}/admin/user/list"> <@spring.message code="menu.user.list"/></a></li>
+                    <li><a href="${basePath}/admin/user/create"> <@spring.message code="menu.user.create"/></a></li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-cogs"></i> <span><@spring.message code="menu.setting"/></span>
-                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.site"/></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.system"/></a>
+            <li class="menu-list">
+                <a href="#"><i class="fa fa-cogs"></i> <span><@spring.message code="menu.setting"/></span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="#"> <@spring.message code="menu.setting.site"/></a></li>
+                    <li><a href="#"> <@spring.message code="menu.setting.system"/></a>
                     </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> <@spring.message code="menu.setting.link"/></a></li>
+                    <li><a href="#"> <@spring.message code="menu.setting.link"/></a></li>
                 </ul>
             </li>
         </ul>
         <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-</aside>
+
+    </div>
+
+
+</div>

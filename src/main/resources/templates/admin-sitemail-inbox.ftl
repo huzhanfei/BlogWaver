@@ -1,123 +1,123 @@
 <#import "common/admin-common.ftl" as common>
 <#import "common/resource-import.ftl" as res>
 <@common.content>
-<@res.cssRefV url="/assets/libs/icheck/skins/flat/blue.css"/>
-    <@res.cssRefV url="/assets/libs/datatables/media/css/dataTables.bootstrap.min.css"/>
-<!-- Main content -->
-<section class="content">
-    <div class="row">
-        <!-- /.col -->
-        <div class="col-md-12">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <h3 class="box-title">收件箱</h3>
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
-                                title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                    </div>
-                    <!-- /. tools -->
+    <@res.cssRefV url="/assets/libs/icheck/skins/flat/blue.css"/>
+    <@res.cssRefV url="/assets/css/datatables-custiom.css"/>
+
+
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="mail-box">
+        <aside class="mail-nav mail-nav-bg-color">
+            <header class="header"><h4>站内信</h4></header>
+            <div class="mail-nav-body">
+                <div class="text-center">
+                    <a class="btn btn-compose" href="${basePath}/admin/sitemail/compose">
+                        写信
+                    </a>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body no-padding">
-                    <div class="mailbox-controls">
-                        <div class="box-tools pull-right">
-                            <div class="has-feedback">
-                                <input type="text" class="form-control input-sm global_filter" id="global_filter"
-                                       placeholder=<@spring.message code="sitemail.searchmail"/>>
-                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <!-- Check all button -->
-                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i
-                                class="fa fa-square-o"></i>
-                        </button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i>
-                            </button>
-                        </div>
-                        <!-- /.btn-group -->
-                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                        <a href="${basePath}/admin/sitemail/compose" class="btn btn-primary" style="height: 30px;"><i
-                                class="fa fa-pencil"></i></a>
+                <ul class="nav nav-pills nav-stacked mail-navigation">
+                    <li class="active"><a href="${basePath}/admin/sitemail/inbox"> <i class="fa fa-inbox"></i> 收件箱 <span
+                            class="label label-danger pull-right inbox-notification">4</span></a></li>
+                    <li><a href="${basePath}/admin/sitemail/sent"> <i class="fa fa-envelope-o"></i> 发信箱</a></li>
+                    <li><a href="${basePath}/admin/sitemail/draft"> <i class="fa fa-file-text-o"></i> 草稿箱<span
+                            class="label label-info pull-right inbox-notification">34</span></a></li>
+                    <li><a href="${basePath}/admin/sitemail/trash"> <i class="fa fa-trash-o"></i> 回收站</a></li>
+                </ul>
+            </div>
+
+        </aside>
+        <section class="mail-box-info">
+            <header class="header">
+                <div class="pull-right">
+                    <div class="has-feedback">
+                        <input type="text" class="form-control input-sm global_filter" id="global_filter"
+                               placeholder=<@spring.message code="sitemail.searchmail"/>>
                     </div>
-                    <div class="box-body mailbox-messages table-responsive">
-                        <table id="inbox-table" class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th><@spring.message code="sitemail.sender"/></th>
-                                <th><@spring.message code="sitemail.subject"/></th>
-                                <th><@spring.message code="sitemail.abstract"/></th>
-                                <th><@spring.message code="sitemail.send_time"/></th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                </div>
+
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-trash-o"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-reply"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-share"></i>
+                        </button>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-primary"><i class="fa fa-refresh"></i></button>
+                    </div>
+
+                    <div class="btn-group select">
+                        <button data-toggle="dropdown" class="btn btn-primary btn-sm dropdown-toggle">
+                            <span style="width: 70px;" class="dropdown-label">过滤</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu text-left text-sm">
+                            <li><a href="#">已读</a></li>
+                            <li><a href="#">未读</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="mail-list">
+                <div class="adv-table">
+                    <table id="inbox-table" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" class="checkbox-toggle"/></th>
+                            <th>发送者</th>
+                            <th>主题</th>
+                            <th>摘要</th>
+                            <th>时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                             <#list 1..14 as mail>
                                 <tr>
                                     <td><input type="checkbox"/></td>
                                     <td><a href="#">Old Hu</a></td>
-                                    <td><a href="${basePath}/admin/sitemail/readmail" class="col-sm-10">Old Hu please eat rice</a><a href="#"
-                                                                                                   class="col-sm-2"><i
+                                    <td><a href="${basePath}/admin/sitemail/readmail" class="col-sm-10">Old Hu please
+                                        eat rice</a><a href="#"
+                                                       class="col-sm-2"><i
                                             class="fa fa-paperclip"></i></a></td>
                                     <td>Let's go to the chuzhanggui restaurant in ...</td>
                                     <td>2018/1/17 8:00</td>
                                 </tr>
                             </#list>
-                            <tr>
-                                <td><input type="checkbox"/></td>
-                                <td><a href="#">Kevin</a></td>
-                                <td><a href="${basePath}/admin/sitemail/readmail" class="col-sm-10">[response to Old Hu] about invitation</a><a href="#"
-                                                                                                              class="col-sm-2"><i
-                                        class="fa fa-paperclip"></i></a></td>
-                                <td>OK!</td>
-                                <td>2018/1/17 8:00</td>
-                            </tr>
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th></th>
-                                <th><@spring.message code="sitemail.sender"/></th>
-                                <th><@spring.message code="sitemail.subject"/></th>
-                                <th><@spring.message code="sitemail.abstract"/></th>
-                                <th><@spring.message code="sitemail.send_time"/></th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <!-- /.mail-box-messages -->
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td><a href="#">Kevin</a></td>
+                            <td><a href="${basePath}/admin/sitemail/readmail" class="col-sm-10">[response to Old Hu]
+                                about invitation</a><a href="#"
+                                                       class="col-sm-2"><i
+                                    class="fa fa-paperclip"></i></a></td>
+                            <td>OK!</td>
+                            <td>2018/1/17 8:00</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th><input type="checkbox" class="checkbox-toggle"/></th>
+                            <th>发送者</th>
+                            <th>主题</th>
+                            <th>摘要</th>
+                            <th>时间</th>
+                        </tr>
+                        </tfoot>
+                    </table>
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer no-padding">
-                    <div class="mailbox-controls">
-                        <!-- Check all button -->
-                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i
-                                class="fa fa-square-o"></i>
-                        </button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i>
-                            </button>
-                        </div>
-                        <!-- /.btn-group -->
-                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                    </div>
-                </div>
-            </div>
-            <!-- /. box -->
-        </div>
-        <!-- /.col -->
+            </section>
+        </section>
     </div>
-    <!-- /.row -->
-</section>
+
+</div>
+
 <!-- /.Main content -->
     <@res.jsRefV url="/assets/libs/datatables/media/js/jquery.dataTables.min.js"/>
     <@res.jsRefV url="/assets/libs/datatables/media/js/dataTables.bootstrap.min.js"/>
@@ -132,13 +132,13 @@
         //TODO: 解决表格第一列关闭排序功能后仍显示排序图标
         var inboxTable = $('#inbox-table').DataTable({
             'paging': true,
-            'lengthChange': false,
+            'lengthChange': true,
             'searching': true,
             'ordering': true,
             'info': true,
+            'dom':'rtipl',
             'autoWidth': false,
-            'dom': 'rtip',
-            "order": [[ 4, "desc" ]],
+            "order": [[4, "desc"]],
             'columnDefs': [{'orderable': false, 'targets': 0}],
             'language': {
                 "sProcessing": "<@spring.message code="datatables.sProcessing"/>",
@@ -170,24 +170,21 @@
     function enableICheckPlugin() {
         //Enable iCheck plugin for checkboxes
         //iCheck for checkbox and radio inputs
-        $('.mailbox-messages input[type="checkbox"]').iCheck({
+        $('table input[type="checkbox"]').iCheck({
             checkboxClass: 'icheckbox_flat-blue',
             radioClass: 'iradio_flat-blue'
         });
 
         //Enable check and uncheck all functionality
-        $(".checkbox-toggle").click(function () {
-            var clicks = $(this).data('clicks');
-            if (clicks) {
+        $(".checkbox-toggle").on("ifChanged", function () {
+            var checked = $(this).prop("checked");
+            if (checked) {
                 //Uncheck all checkboxes
-                $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
-                $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+                $("table input[type='checkbox']").iCheck("check");
             } else {
                 //Check all checkboxes
-                $(".mailbox-messages input[type='checkbox']").iCheck("check");
-                $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+                $("table input[type='checkbox']").iCheck("uncheck");
             }
-            $(this).data("clicks", !clicks);
         });
     }
 

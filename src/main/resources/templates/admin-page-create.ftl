@@ -5,25 +5,17 @@
     <@res.cssRefV url="/assets/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
 <title>撰写文章</title>
 <!-- Main content -->
-<section class="content">
+<div class="wrapper">
     <div class="row">
-        <div class="col-md-12">
-            <div class="box box-info">
-                <div class="box-header">
-                    <h3 class="box-title">创建页面
-                        <small>开始绘制你个性的页面吧！</small>
-                    </h3>
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
-                                title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                    </div>
-                    <!-- /. tools -->
-                </div>
-                <!-- /.box-header -->
-
-                <div class="box-body pad">
+        <div class="col-lg-12">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    创建页面
+                    <span class="tools pull-right">
+                                <a class="fa fa-chevron-down" href="javascript:;"></a>
+                             </span>
+                </header>
+                <div class="panel-body">
                     <form role="form">
                         <!-- text input -->
                         <div class="form-group">
@@ -65,7 +57,7 @@
                     </form>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer">
+                <footer class="panel-footer">
                     <button type="button" class="btn btn-default">
                         <i class="fa fa-times"></i> 放弃
                     </button>
@@ -75,15 +67,15 @@
                     <button type="button" class="btn btn-success pull-right" style="margin-right: 5px;">
                         <i class="fa fa-save"></i> 保存草稿
                     </button>
-                </div>
+                </footer>
 
-            </div>
+            </section>
             <!-- /.box -->
         </div>
         <!-- /.col-->
     </div>
     <!-- ./row -->
-</section>
+</div>
 <!-- /.content -->
 <!--CKEditor-->
     <@res.jsRef url="/assets/libs/ckeditor/ckeditor.js"/>

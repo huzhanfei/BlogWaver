@@ -50,4 +50,11 @@ public class SiteMailController {
         return "admin-sitemail-readmail";
     }
 
+
+    @RequestMapping(value = "/sent", method= RequestMethod.GET)
+    public String initSentMailPage(){
+        LOGGER.info("initSentMailPage");
+        return "admin-sitemail-sent";
+    }
+
 }

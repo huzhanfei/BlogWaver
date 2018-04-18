@@ -1,5 +1,5 @@
 <!-- Main Footer -->
-<footer class="main-footer">
+<footer class="sticky-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
         由BlogWaver强力驱动

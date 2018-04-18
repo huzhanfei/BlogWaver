@@ -7,58 +7,52 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
     <title><@spring.message code="dashboard.title"/></title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3-->
-    <@cssRefV url="/assets/libs/bootstrap/css/bootstrap.min.css"/>
-    <!-- Font Awesome -->
-    <@cssRefV url="/assets/libs/font-awesome/css/font-awesome.min.css"/>
-    <!-- Ionicons -->
-    <@cssRefV url="/assets/libs/ionicons/css/ionicons.min.css"/>
-    <!-- NProgress -->
     <@cssRefV url="/assets/libs/nprogress/nprogress.css"/>
-    <!-- Select2 -->
-    <@cssRefV url="/assets/libs/select2/dist/css/select2.min.css"/>
-    <!-- Theme style -->
-    <@cssRefV url="/assets/css/AdminLTE.min.css"/>
-    <!-- admin skins -->
-    <@cssRefV url="/assets/css/skins/_all-skins.min.css"/>
+    <@cssRefV url="/assets/libs/jquery-tags-input/jquery.tagsinput.css"/>
+
+    <!-- Style -->
+    <@cssRefV url="/assets/css/style.css"/>
+    <@cssRefV url="/assets/css/style-responsive.css"/>
+
+
     <!-- jQuery 3 -->
-    <@jsRefV url="/assets/libs/jquery/jquery-3.3.1.min.js"/>
+    <@jsRefV url="/assets/js/jquery-3.3.1.min.js"/>
     <!-- Bootstrap 3.3.7 -->
-    <@jsRefV url="/assets/libs/bootstrap/js/bootstrap.min.js"/>
+    <@jsRefV url="/assets/js/bootstrap.min.js"/>
     <!-- jQuery PJAX -->
     <@jsRefV url="/assets/js/jquery-pjax-master/jquery.pjax.js"/>
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini fixed">
-    <#include "../includes/admin-header.ftl"/>
+<body class="sticky-header">
+<section>
     <#include "../includes/admin-menu.ftl"/>
 
-    <div class="wrapper">
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-
+    <!-- main content start-->
+    <div class="main-content" >
+        <#include "../includes/admin-header.ftl"/>
+    <div id="content_wapper">
 </#if>
     <#nested >
 <#if !isPjax>
+    </div>
+        <#include "../includes/admin-footer.ftl"/>
+    </div>
 
-    </div>
-    <!-- /.content-wrapper -->
-    </div>
-    <#include "../includes/admin-footer.ftl"/>
-    <#include "../includes/admin-control-sidebar.ftl"/>
-    <!-- FastClick -->
-    <@jsRefV url="/assets/libs/fastclick/lib/fastclick.js"/>
-    <!-- SlimScoll -->
-    <@jsRefV url="/assets/libs/jQuery-slimScroll/jquery.slimscroll.min.js"/>
-    <!-- NProgress -->
+</section>
+    <@jsRefV url="/assets/js/jquery-ui-1.10.3.min.js"/>
+    <@jsRefV url="/assets/js/jquery-ui-1.9.2.custom.min.js"/>
+    <@jsRefV url="/assets/js/jquery-migrate-1.2.1.min.js"/>
+    <@jsRefV url="/assets/js/modernizr.min.js"/>
+    <@jsRefV url="/assets/js/jquery.nicescroll.js"/>
     <@jsRefV url="/assets/libs/nprogress/nprogress.js"/>
-    <!-- AdminLTE App -->
-    <@jsRefV url="/assets/js/adminlte.min.js"/>
-    <!-- Admin Common -->
-    <@jsRefV url="/assets/js/admin-common.js"/>
+    <@jsRefV url="/assets/js/scripts.js"/>
+
 </body>
 </html>
 </#if>
