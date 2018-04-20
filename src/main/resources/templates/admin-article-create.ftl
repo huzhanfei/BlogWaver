@@ -2,10 +2,22 @@
 <#import "common/resource-import.ftl" as res>
 <@common.content>
     <@res.cssRefV url="/assets/libs/icheck/skins/flat/blue.css"/>
-    <@res.cssRefV url="/assets/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+    <@res.cssRefV url="/assets/css/datetimepicker-custom.css"/>
 <title>撰写文章</title>
 <!--body wrapper start-->
 <div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li><a href="${basePath}/admin/article/list">文章</a></li>
+                <li class="active">撰写文章</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
             <section class="panel panel-default">

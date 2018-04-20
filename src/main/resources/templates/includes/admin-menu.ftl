@@ -28,60 +28,26 @@
 
         <!-- Sidebar Menu -->
         <ul class="nav nav-pills nav-stacked custom-nav" id="sidebar_menu">
-            <li>
-                <a href="${basePath}/admin/dashboard">
-                    <i class="fa fa-dashboard"></i> <span><@spring.message code="menu.dashboard"/></span>
-                </a>
-            </li>
+            <li><a href="${basePath}/admin/dashboard"><i class="fa fa-dashboard"></i> <span><@spring.message code="menu.dashboard"/></span></a></li>
             <li class="menu-list">
                 <a href="#">
                     <i class="fa fa-edit"></i> <span><@spring.message code="menu.article"/></span></a>
                 <ul class="sub-menu-list">
-                    <li>
-                        <a href="${basePath}/admin/article/create">
-                             <@spring.message code="menu.article.create"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}/admin/article/list">
-                             <@spring.message code="menu.article.list"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}/admin/article/category">
-                             <@spring.message code="menu.article.category"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}/admin/article/tags">
-                             <@spring.message code="menu.article.tag"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}/admin/article/draft">
-                             <@spring.message code="menu.article.draft"/>
-                        </a>
-                    </li>
+                    <li><a href="${basePath}/admin/article/create"><@spring.message code="menu.article.create"/></a></li>
+                    <li><a href="${basePath}/admin/article/list"><@spring.message code="menu.article.list"/></a></li>
+                    <li><a href="${basePath}/admin/article/category"><@spring.message code="menu.article.category"/></a></li>
+                    <li><a href="${basePath}/admin/article/tags"><@spring.message code="menu.article.tag"/></a></li>
+                    <li><a href="${basePath}/admin/article/draft"><@spring.message code="menu.article.draft"/></a></li>
                 </ul>
             </li>
             <li class="menu-list">
-                <a href="#"><i class="fa fa-file"></i> <span><@spring.message code="menu.page"/></span>
-                    
-                </a>
+                <a href="#"><i class="fa fa-file"></i> <span><@spring.message code="menu.page"/></span></a>
                 <ul class="sub-menu-list">
-                    <li>
-                        <a href="${basePath}/admin/page/create">
-                             <@spring.message code="menu.page.create"/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${basePath}/admin/page/list">
-                             <@spring.message code="menu.page.list"/>
-                        </a>
-                    </li>
+                    <li><a href="${basePath}/admin/page/create"><@spring.message code="menu.page.create"/></a></li>
+                    <li><a href="${basePath}/admin/page/list"><@spring.message code="menu.page.list"/></a></li>
                 </ul>
             </li>
-            <li >
+            <li>
                 <a href="${basePath}/admin/media/gallery">
                     <i class="fa fa-photo"></i> <span><@spring.message code="menu.media"/></span>
                 </a>
@@ -96,24 +62,23 @@
                     <li><a href="${basePath}/admin/sitemail/trash"> <@spring.message code="menu.mail.trash"/></a></li>
                 </ul>
             </li>
-            <li><a href="${basePath}/admin/comment/list"><i class="fa fa-comments"></i>
-                <span><@spring.message code="menu.comment"/></span></a></li>
-            <li><a href="${basePath}/admin/user/information"><i class="fa fa-user"></i>
-                <span><@spring.message code="menu.profile"/></span></a></li>
+            <li><a href="${basePath}/admin/comment/list"><i class="fa fa-comments"></i><span><@spring.message code="menu.comment"/></span></a></li>
+            <li><a href="${basePath}/admin/link/"><i class="fa fa-link"></i> <@spring.message code="menu.link"/></a></li>
+            <li><a href="${basePath}/admin/user/profile"><i class="fa fa-user"></i><span><@spring.message code="menu.profile"/></span></a></li>
 
 
             <li class="menu-list">
                 <a href="#"><i class="fa fa-eye"></i> <span><@spring.message code="menu.view"/></span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="#"> <@spring.message code="menu.view.nav"/></a></li>
-                    <li><a href="#"> <@spring.message code="menu.view.theme"/></a></li>
+                    <li><a href="${basePath}/admin/frontend/nav"> <@spring.message code="menu.view.nav"/></a></li>
+                    <li><a href="${basePath}/admin/frontend/theme"> <@spring.message code="menu.view.theme"/></a></li>
                 </ul>
             </li>
             <li class="menu-list">
                 <a href="#"><i class="fa fa-puzzle-piece"></i> <span><@spring.message code="menu.plugin"/></span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="#"> <@spring.message code="menu.plugin.list"/></a></li>
-                    <li><a href="#"> <@spring.message code="menu.plugin.install"/></a>
+                    <li><a href="${basePath}/admin/plugin/list"> <@spring.message code="menu.plugin.list"/></a></li>
+                    <li><a href="${basePath}/admin/plugin/install"> <@spring.message code="menu.plugin.install"/></a>
                     </li>
                 </ul>
             </li>
@@ -127,10 +92,8 @@
             <li class="menu-list">
                 <a href="#"><i class="fa fa-cogs"></i> <span><@spring.message code="menu.setting"/></span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="#"> <@spring.message code="menu.setting.site"/></a></li>
-                    <li><a href="#"> <@spring.message code="menu.setting.system"/></a>
-                    </li>
-                    <li><a href="#"> <@spring.message code="menu.setting.link"/></a></li>
+                    <li><a href="${basePath}/admin/setting/site"> <@spring.message code="menu.setting.site"/></a></li>
+                    <li><a href="${basePath}/admin/setting/system"> <@spring.message code="menu.setting.system"/></a></li>
                 </ul>
             </li>
         </ul>

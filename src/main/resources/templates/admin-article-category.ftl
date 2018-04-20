@@ -6,6 +6,17 @@
 <!-- Main content -->
 <div class="wrapper">
     <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li><a href="${basePath}/admin/article/list">文章</a></li>
+                <li class="active">文章分类</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-4 col-sm-12">
             <section class="panel panel-default">
                 <header class="panel-heading">
@@ -83,7 +94,7 @@
                             </button>
                             <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                         </div>
-                        <table id="category-table" class="table table-striped">
+                        <table id="article_category_table" class="table table-striped">
                             <thead>
                             <tr>
                                 <th><input type="checkbox" class="checkbox-toggle"/></th>
@@ -148,7 +159,7 @@
 
     function initTable() {
         //TODO: 解决表格第一列关闭排序功能后仍显示排序图标
-        return $('#category-table').DataTable({
+        return $('#article_category_table').DataTable({
             'paging': true,
             'lengthChange': true,
             'searching': true,

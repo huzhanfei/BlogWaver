@@ -22,11 +22,11 @@
 
 
     <!-- jQuery 3 -->
-    <@jsRefV url="/assets/js/jquery-3.3.1.min.js"/>
+    <@jsRefV url="/assets/libs/jquery/jquery-3.3.1.min.js"/>
     <!-- Bootstrap 3.3.7 -->
-    <@jsRefV url="/assets/js/bootstrap.min.js"/>
+    <@jsRefV url="/assets/libs/bootstrap/js/bootstrap.min.js"/>
     <!-- jQuery PJAX -->
-    <@jsRefV url="/assets/js/jquery-pjax-master/jquery.pjax.js"/>
+    <@jsRefV url="/assets/libs/jquery-pjax-master/jquery.pjax.js"/>
 </head>
 
 <body class="sticky-header">
@@ -36,7 +36,7 @@
     <!-- main content start-->
     <div class="main-content" >
         <#include "../includes/admin-header.ftl"/>
-    <div id="content_wapper">
+    <div class="content-wrapper">
 </#if>
     <#nested >
 <#if !isPjax>
@@ -45,11 +45,11 @@
     </div>
 
 </section>
-    <@jsRefV url="/assets/js/jquery-ui-1.10.3.min.js"/>
+    <@jsRefV url="/assets/libs/jquery-ui/jquery-ui-1.10.3.min.js"/>
     <@jsRefV url="/assets/js/jquery-ui-1.9.2.custom.min.js"/>
-    <@jsRefV url="/assets/js/jquery-migrate-1.2.1.min.js"/>
-    <@jsRefV url="/assets/js/modernizr.min.js"/>
-    <@jsRefV url="/assets/js/jquery.nicescroll.js"/>
+    <@jsRefV url="/assets/libs/jquery-migrate/jquery-migrate-1.2.1.min.js"/>
+    <@jsRefV url="/assets/libs/modernizr/modernizr.min.js"/>
+    <@jsRefV url="/assets/libs/jquery-nicescroll/jquery.nicescroll.js"/>
     <@jsRefV url="/assets/libs/nprogress/nprogress.js"/>
     <@jsRefV url="/assets/js/scripts.js"/>
 

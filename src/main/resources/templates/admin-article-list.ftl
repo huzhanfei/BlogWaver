@@ -7,6 +7,17 @@
 <!--body wrapper start-->
 <div class="wrapper">
     <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li><a href="${basePath}/admin/article/list">文章</a></li>
+                <li class="active">所有文章</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <section class="panel panel-default">
                 <header class="panel-heading">
@@ -36,12 +47,13 @@
 
                         </div>
 
-                        <table id="article-table" class="table table-striped">
+                        <table id="article_list_table" class="table table-striped">
                             <thead>
                             <tr>
                                 <th><input type="checkbox" class="checkbox-toggle"/></th>
                                 <th>ID</th>
                                 <th>文章标题</th>
+                                <th>作者</th>
                                 <th>摘要</th>
                                 <th>分类</th>
                                 <th>标签</th>
@@ -55,6 +67,7 @@
                                 <td><input type="checkbox"/></td>
                                 <td>${index}</td>
                                 <td><a href="#">世界，你好</a></td>
+                                <td>Jeffrey Hu</td>
                                 <td>article content in here...</td>
                                 <td><a href="#">随笔</a></td>
                                 <td><a href="#">天空</a>,<a href="#">草地</a></td>
@@ -71,6 +84,7 @@
                                 <th><input type="checkbox" class="checkbox-toggle"/></th>
                                 <th>ID</th>
                                 <th>文章标题</th>
+                                <th>作者</th>
                                 <th>摘要</th>
                                 <th>分类</th>
                                 <th>标签</th>
@@ -106,7 +120,7 @@
 
     function initTable() {
         //TODO: 解决表格第一列关闭排序功能后仍显示排序图标
-        return $('#article-table').DataTable({
+        return $('#article_list_table').DataTable({
             'paging': true,
             'lengthChange': true,
             'searching': true,

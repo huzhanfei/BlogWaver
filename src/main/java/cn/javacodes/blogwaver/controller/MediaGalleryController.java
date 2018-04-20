@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/admin/media")
 public class MediaGalleryController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MediaGalleryController.class);
 
-    @RequestMapping(value = "/gallery", method = RequestMethod.GET)
+    @RequestMapping(value ="/gallery", method = RequestMethod.GET)
     public String initGalleryPage() {
         LOGGER.info("initGalleryPage");
         return "admin-media-gallery";

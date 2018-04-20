@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/admin/page")
 public class PageController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PageController.class);
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String initPageListPage() {

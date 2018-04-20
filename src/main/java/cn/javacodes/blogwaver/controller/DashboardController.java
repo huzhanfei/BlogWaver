@@ -18,6 +18,6 @@ public class DashboardController {
     @RequestMapping(method = RequestMethod.GET)
     public String initDashboardPage() {
         LOGGER.info("initDashboardPage");
-        return "admin-dashboard";
+        return "admin-index";
     }
 }

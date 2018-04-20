@@ -4,10 +4,10 @@ Author: ThemeBucket
 -------------------------------------------*/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
-@import url('bootstrap.min.css');
+@import url('../libs/bootstrap/css/bootstrap.min.css');
 @import url('bootstrap-reset.css');
-@import url('jquery-ui-1.10.3.css');
-@import url('../fonts/css/font-awesome.min.css');
+@import url('../libs/jquery-ui/jquery-ui-1.10.3.css');
+@import url('../libs/font-awesome/css/font-awesome.min.css');
 @import url('custom-ico-fonts.css');
 
 body {
@@ -2374,12 +2374,35 @@ table.display tr.even.gradeX, table.display tr.gradeX, tr.even.gradeU td.sorting
 .media-gal .item {
     margin-bottom: 1%;
     margin-right: 1%;
-    width: 233px;
     background: #EFF0F4;
     color: #7A7676;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+}
+
+.item-content{
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1501px) {
+    .media-gal .item {
+        width: 19%;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-width:1201px) {
+    .media-gal .item {width: 24%;}
+}
+
+@media screen and (max-width: 1200px) and (min-width:901px)  {
+    .media-gal .item {width: 32%;}
+}
+
+@media screen and (max-width: 900px){
+    .media-gal .item {width: 49%;}
 }
 
 .media-gal .item:hover {
@@ -2401,7 +2424,7 @@ table.display tr.even.gradeX, table.display tr.gradeX, tr.even.gradeU td.sorting
 }
 
 .media-gal .item img {
-    height: 200px;
+    /*height: 100%;*/
     width: 100%;
 }
 
@@ -5378,4 +5401,81 @@ ul.iconic-list li a:hover, ul.iconic-list li.active a {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+.content-wrapper {
+    background: #eff0f4;
+}
+
+.margin-right5 {
+    margin-right: 5px;
+}
+
+
+.theme-gal {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.theme-gal .item {
+    float: left;
+}
+
+.theme-gal .item {
+    margin-bottom: 1%;
+    margin-right: 1%;
+    background: #EFF0F4;
+    color: #7A7676;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+@media screen and (min-width: 1501px) {
+    .theme-gal .item {width: 19%;}
+}
+
+@media screen and (max-width: 1500px) and (min-width:1201px) {
+    .theme-gal .item {width: 24%;}
+}
+
+@media screen and (max-width: 1200px) and (min-width:901px)  {
+    .theme-gal .item {width: 32%;}
+}
+
+@media screen and (max-width: 900px){
+    .theme-gal .item {width: 49%;}
+}
+
+/*.theme-gal .item:hover {*/
+    /*background: #65CEA7;*/
+    /*-webkit-transition: all 0.3s;*/
+    /*-moz-transition: all 0.3s;*/
+    /*transition: all 0.3s;*/
+    /*color: #fff;*/
+/*}*/
+
+.theme-gal .item:hover img {
+    opacity: .3;
+}
+
+.theme-gal .item p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.theme-gal .item img {
+    /*height: 100%;*/
+    width: 100%;
+}
+
+.theme-gal img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.ms-container{
+    width: 100% !important;
 }

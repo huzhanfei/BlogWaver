@@ -1,0 +1,55 @@
+{
+  "_from": "isotope-horizontal",
+  "_id": "isotope-horizontal@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-rTm8K3d3Xt/pQBOdZj06IJpNkAjL+my4SWQLxJhjnxWTdDEX+r5qBsdstOou9kIvJFkgLYaR+YOog+7en6kHXw==",
+  "_location": "/isotope-horizontal",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "isotope-horizontal",
+    "name": "isotope-horizontal",
+    "escapedName": "isotope-horizontal",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/isotope-horizontal/-/isotope-horizontal-2.0.1.tgz",
+  "_shasum": "cfbb056f7270b3f8f61b28c138395626ab9a5b43",
+  "_spec": "isotope-horizontal",
+  "_where": "E:\\DevWorkspace\\blogwaver\\src\\main\\resources\\assets\\libs\\jquery-isotope",
+  "author": {
+    "name": "Metafizzy"
+  },
+  "bugs": {
+    "url": "https://github.com/metafizzy/isotope-horizontal/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "isotope-layout": ">=2.1 <4.0"
+  },
+  "deprecated": false,
+  "description": "horizontal layoutMode for Isotope",
+  "homepage": "https://github.com/metafizzy/isotope-horizontal",
+  "keywords": [
+    "DOM",
+    "browser",
+    "isotope",
+    "isotope-layout-mode"
+  ],
+  "main": "horizontal.js",
+  "name": "isotope-horizontal",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/metafizzy/isotope-horizontal.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.1"
+}

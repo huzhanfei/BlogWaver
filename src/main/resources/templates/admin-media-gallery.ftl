@@ -4,6 +4,16 @@
 <!--body wrapper start-->
 <div class="wrapper">
     <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li class="active">媒体库</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12">
             <section class="panel panel-default">
                 <header class="panel-heading">
@@ -34,87 +44,155 @@
 
 
                     <div id="gallery" class="media-gal">
-                        <div class="images item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image1.jpg" alt=""/>
-                            </a>
-                            <p>img01.jpg </p>
+                        <div class="thumbnail images item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" audio item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image2.jpg" alt=""/>
-                            </a>
-                            <p>img02.jpg </p>
+                        <div class="thumbnail audio item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image2.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" video item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image3.jpg" alt=""/>
-                            </a>
-                            <p>img03.jpg </p>
+                        <div class="thumbnail images item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image3.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" images audio item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image4.jpg" alt=""/>
-                            </a>
-                            <p>img04.jpg </p>
+                        <div class="thumbnail audio item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image4.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" images documents item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image5.jpg" alt=""/>
-                            </a>
-                            <p>img05.jpg </p>
+                        <div class="thumbnail video item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image5.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" audio item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image1.jpg" alt=""/>
-                            </a>
-                            <p>img01.jpg </p>
+                        <div class="thumbnail audio item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" documents item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image2.jpg" alt=""/>
-                            </a>
-                            <p>img02.jpg </p>
+                        <div class="thumbnail images item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image2.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-                        <div class=" video item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image3.jpg" alt=""/>
-                            </a>
-                            <p>img03.jpg </p>
+                        <div class="thumbnail audio item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image3.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" images item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image4.jpg" alt=""/>
-                            </a>
-                            <p>img04.jpg </p>
+                        <div class="thumbnail video item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image4.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" documents item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image5.jpg" alt=""/>
-                            </a>
-                            <p>img05.jpg </p>
+                        <div class="thumbnail images item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image5.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" video item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image1.jpg" alt=""/>
-                            </a>
-                            <p>img01.jpg </p>
+                        <div class="thumbnail video item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
-
-                        <div class=" audio images item ">
-                            <a href="#myModal" data-toggle="modal">
-                                <img src="${basePath}/assets/images/gallery/image2.jpg" alt=""/>
-                            </a>
-                            <p>img02.jpg </p>
+                        <div class="thumbnail images item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image2.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
+                        </div>
+                        <div class="thumbnail video item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image3.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
+                        </div>
+                        <div class="thumbnail documents item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image4.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
+                        </div>
+                        <div class="thumbnail documents item">
+                            <div class="item-content">
+                                <a href="#myModal" data-toggle="modal">
+                                    <img src="${basePath}/assets/images/gallery/image5.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <div class="caption text-center">
+                                <span>img01.jpg </span>
+                            </div>
                         </div>
 
                     </div>
@@ -193,13 +271,15 @@
     </div>
 </div>
 <!--body wrapper end-->
-<@res.jsRefV url="/assets/js/jquery.isotope.js"/>
-
+<@res.jsRefV url="/assets/libs/jquery-isotope/isotope-layout/dist/isotope.pkgd.min.js"/>
+<@res.jsRefV url="/assets/libs/jquery-isotope/isotope-cells-by-row/cells-by-row.js"/>
 <script type="text/javascript">
     $(function () {
         var $container = $('#gallery');
         $container.isotope({
             itemSelector: '.item',
+            layoutMode: 'fitRows',
+
             animationOptions: {
                 duration: 750,
                 easing: 'linear',

@@ -6,6 +6,17 @@
 <!-- Main content -->
 <div class="wrapper">
     <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li><a href="${basePath}/admin/article/list">文章</a></li>
+                <li class="active">标签管理</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <section class="panel panel-default">
                 <header class="panel-heading">
@@ -50,7 +61,7 @@
                         </div>
 
 
-                        <table id="category-table" class="table table-striped">
+                        <table id="article_tag_table" class="table table-striped">
                             <thead>
                             <tr>
                                 <th><input type="checkbox" class="checkbox-toggle"/></th>
@@ -111,8 +122,6 @@
     <@res.jsRefV url="/assets/libs/datatables/media/js/jquery.dataTables.min.js"/>
     <@res.jsRefV url="/assets/libs/datatables/media/js/dataTables.bootstrap.min.js"/>
     <@res.jsRefV url="/assets/libs/icheck/icheck.min.js"/>
-<!--Select2-->
-    <@res.jsRefV url="/assets/libs/select2/dist/js/select2.full.min.js"/>
 <script>
 
     function filterGlobal(table, value) {
@@ -121,7 +130,7 @@
 
     function initTable() {
         //TODO: 解决表格第一列关闭排序功能后仍显示排序图标
-        return $('#category-table').DataTable({
+        return $('#article_tag_table').DataTable({
             'paging': true,
             'lengthChange': true,
             'searching': true,

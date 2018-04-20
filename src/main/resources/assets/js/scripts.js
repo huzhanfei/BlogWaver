@@ -2,17 +2,17 @@
     "use strict";
 
     // custom scrollbar
-
-    $("html").niceScroll({
-        styler: "fb",
-        cursorcolor: "#65cea7",
-        cursorwidth: '6',
-        cursorborderradius: '0px',
-        background: '#424f63',
-        spacebarenabled: false,
-        cursorborder: '0',
-        zindex: '1000'
-    });
+    //
+    // $("html").niceScroll({
+    //     styler: "fb",
+    //     cursorcolor: "#65cea7",
+    //     cursorwidth: '6',
+    //     cursorborderradius: '0px',
+    //     background: '#424f63',
+    //     spacebarenabled: false,
+    //     cursorborder: '0',
+    //     zindex: '1000'
+    // });
 
     $(".left-side").niceScroll({
         styler: "fb",
@@ -32,7 +32,7 @@
 
 
     // 左侧导航菜单Pjax绑定
-    jQuery(document).pjax("#sidebar_menu a", "#content_wapper");
+    jQuery(document).pjax("#sidebar_menu a", ".content-wrapper");
     NProgress.configure({parent: '.header-section'});
     jQuery(document).on('pjax:start', function () {
         NProgress.start();
@@ -224,3 +224,4 @@
 
 
 })(jQuery);
+

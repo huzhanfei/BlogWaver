@@ -1,0 +1,57 @@
+{
+  "_from": "isotope-masonry-horizontal",
+  "_id": "isotope-masonry-horizontal@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-H0sDZQ2D5VZ37ALb04hII0JAoDqVZ3ewbgiHbGBqrVMwBrEeJ0ZldB9hzbeeRQhHeEPWNV3p5xuLVd2pOEnMMA==",
+  "_location": "/isotope-masonry-horizontal",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "isotope-masonry-horizontal",
+    "name": "isotope-masonry-horizontal",
+    "escapedName": "isotope-masonry-horizontal",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/isotope-masonry-horizontal/-/isotope-masonry-horizontal-2.0.1.tgz",
+  "_shasum": "792f931a9bb048c439f765e0e5d5d6fc2867d29e",
+  "_spec": "isotope-masonry-horizontal",
+  "_where": "E:\\DevWorkspace\\blogwaver\\src\\main\\resources\\assets\\libs\\jquery-isotope",
+  "author": {
+    "name": "Metafizzy"
+  },
+  "bugs": {
+    "url": "https://github.com/metafizzy/isotope-masonry-horizontal/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "get-size": "^2.0.2",
+    "isotope-layout": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "masonryHorizontal layout mode for Isotope",
+  "homepage": "http://isotope.metafizzy.co/layout-modes/masonryhorizontal.html",
+  "keywords": [
+    "DOM",
+    "browser",
+    "layout",
+    "isotope",
+    "isotope-layout-mode"
+  ],
+  "main": "masonry-horizontal.js",
+  "name": "isotope-masonry-horizontal",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/metafizzy/isotope-masonry-horizontal.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.1"
+}

@@ -7,6 +7,17 @@
 
 <!--body wrapper start-->
 <div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li><a href="${basePath}/admin/sitemail/inbox">站内信</a></li>
+                <li class="active">垃圾箱</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
     <div class="mail-box">
         <aside class="mail-nav mail-nav-bg-color">
             <header class="header"><h4>站内信</h4></header>
@@ -69,7 +80,7 @@
 
             <section class="mail-list">
                 <div class="adv-table">
-                    <table id="inbox-table" class="table table-striped">
+                    <table id="sitemail_trash_table" class="table table-striped">
                         <thead>
                         <tr>
                             <th><input type="checkbox" class="checkbox-toggle"/></th>
@@ -132,7 +143,7 @@
 
     function initInboxTable() {
         //TODO: 解决表格第一列关闭排序功能后仍显示排序图标
-        var inboxTable = $('#inbox-table').DataTable({
+        var inboxTable = $('#sitemail_trash_table').DataTable({
             'paging': true,
             'lengthChange': true,
             'searching': true,

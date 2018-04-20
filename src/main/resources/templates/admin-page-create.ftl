@@ -7,6 +7,17 @@
 <!-- Main content -->
 <div class="wrapper">
     <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="${basePath}/admin"><i class="fa fa-home"></i> 仪表盘</a></li>
+                <li><a href="${basePath}/admin/page/list">页面</a></li>
+                <li class="active">创建页面</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <section class="panel panel-default">
                 <header class="panel-heading">
@@ -79,8 +90,6 @@
 <!-- /.content -->
 <!--CKEditor-->
     <@res.jsRef url="/assets/libs/ckeditor/ckeditor.js"/>
-<!--Select2-->
-    <@res.jsRefV url="/assets/libs/select2/dist/js/select2.full.min.js"/>
 <!--iCheck-->
     <@res.jsRefV url="/assets/libs/icheck/icheck.min.js"/>
 <#--DatePicker-->
@@ -90,7 +99,6 @@
 <script type="text/javascript">
     $(function () {
         CKEDITOR.replace('editor1');
-        $('.select2').select2();
         //iCheck for checkbox and radio inputs
 
         $('input[type="checkbox"].minimal').iCheck({

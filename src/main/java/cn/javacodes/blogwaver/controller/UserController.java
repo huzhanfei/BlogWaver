@@ -21,21 +21,21 @@ public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String initInboxPage(){
+    public String initListPage(){
         LOGGER.info("initListPage");
         return "admin-user-list";
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public String initComposePage(){
+    public String initCreatePage(){
         LOGGER.info("initCreatePage");
-        return "admin-user-createb";
+        return "admin-user-create";
     }
 
-    @RequestMapping(value = "/information", method = RequestMethod.GET)
-    public String initInformationPage(){
-        LOGGER.info("initInformationPage");
-        return "admin-user-information";
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public String initProfilePage(){
+        LOGGER.info("initProfilePage");
+        return "admin-user-profile";
     }
 
 }
