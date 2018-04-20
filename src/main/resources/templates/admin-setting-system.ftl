@@ -30,7 +30,7 @@
                             <a href="#comment_tab" data-toggle="tab"><i class="fa fa-cog"></i> 评论设置</a>
                         </li>
                         <li class="">
-                            <a href="#user_reg_tab" data-toggle="tab"><i class="fa fa-key"></i> 注册/登陆配置</a>
+                            <a href="#user_reg_tab" data-toggle="tab"><i class="fa fa-key"></i> 注册/登录配置</a>
                         </li>
                         <li class="">
                             <a href="#mail_tab" data-toggle="tab"><i class="fa fa-key"></i> 邮件发送配置</a>
@@ -253,7 +253,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-md-2 control-label">登陆注册页面LOGO</label>
+                                    <label for="inputEmail3" class="col-md-2 control-label">登录注册页面LOGO</label>
                                     <div class="col-md-10">
                                         <div class="fileupload fileupload-new" data-provides="fileupload">
                                             <div class="fileupload-new thumbnail">
@@ -284,7 +284,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-md-2 control-label">登陆验证码</label>
+                                    <label for="inputEmail3" class="col-md-2 control-label">登录验证码</label>
                                     <div class="col-md-10">
                                         <input type="checkbox" checked class="minimal">
                                     </div>
