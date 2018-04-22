@@ -63,7 +63,7 @@
                 </ul>
             </li>
             <li><a href="${basePath}/admin/comment/list"><i class="fa fa-comments"></i><span><@spring.message code="menu.comment"/></span></a></li>
-            <li><a href="${basePath}/admin/link/"><i class="fa fa-link"></i> <@spring.message code="menu.link"/></a></li>
+            <li><a href="${basePath}/admin/link/"><i class="fa fa-link"></i> <span><@spring.message code="menu.link"/></span></a></li>
             <li><a href="${basePath}/admin/user/profile"><i class="fa fa-user"></i><span><@spring.message code="menu.profile"/></span></a></li>
 
 

@@ -108,7 +108,7 @@
             </li>
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <img src="${basePath}/assets/images/photos/user-avatar.png" alt=""/>
+                    <img src="${basePath}/assets/images/photos/user1.png" alt=""/>
                     Jeffrey Hu
                     <span class="caret"></span>
                 </a>
