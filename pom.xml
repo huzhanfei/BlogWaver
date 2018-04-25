@@ -169,6 +169,11 @@
 			<artifactId>freemarker-java8</artifactId>
 			<version>1.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.alipay.jarslink</groupId>
+			<artifactId>jarslink-api</artifactId>
+			<version>1.6.1.20180301</version>
+		</dependency>
 
 
 	</dependencies>

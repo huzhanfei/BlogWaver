@@ -6,7 +6,7 @@ server:
     direct-buffers: true
   port: 8082
   servlet:
-    context-path: /blogwaver
+    context-path: /
 spring:
   application:
     name: BlogWaver
@@ -20,7 +20,7 @@ spring:
     expose-session-attributes: true
     expose-spring-macro-helpers: true
     suffix: .ftl
-    template-loader-path: classpath:templates
+    template-loader-path: templates
     request-context-attribute: request
     settings:
       auto_import: common/spring.ftl as spring
