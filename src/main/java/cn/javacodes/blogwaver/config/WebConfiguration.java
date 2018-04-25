@@ -38,7 +38,7 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/assets/**")
-                .addResourceLocations("classpath:/assets/")
+                .addResourceLocations("assets/")
                 .resourceChain(true)
                 .addResolver(new GzipResourceResolver())
                 .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
