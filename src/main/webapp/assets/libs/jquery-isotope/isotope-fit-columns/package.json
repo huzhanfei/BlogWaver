@@ -1,0 +1,56 @@
+{
+  "_from": "isotope-fit-columns",
+  "_id": "isotope-fit-columns@1.1.4",
+  "_inBundle": false,
+  "_integrity": "sha512-l/XiSqjBt1T1ALrZHTOCT0i3Sb6EyABczezKJkuBi3mUXU0b+W26+CCG6BwtpmzilnQrZ2qDDuP7fNOKcSbNHg==",
+  "_location": "/isotope-fit-columns",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "isotope-fit-columns",
+    "name": "isotope-fit-columns",
+    "escapedName": "isotope-fit-columns",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/isotope-fit-columns/-/isotope-fit-columns-1.1.4.tgz",
+  "_shasum": "71074ad86a3ddc7a5800310866be5c42791bae30",
+  "_spec": "isotope-fit-columns",
+  "_where": "E:\\DevWorkspace\\blogwaver\\src\\main\\resources\\assets\\libs\\jquery-isotope",
+  "author": {
+    "name": "Metafizzy"
+  },
+  "bugs": {
+    "url": "https://github.com/metafizzy/isotope-fit-columns/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "isotope-layout": ">=2.1 <4.0"
+  },
+  "deprecated": false,
+  "description": "fitColumns layout mode for Isotope",
+  "homepage": "https://github.com/metafizzy/isotope-fit-columns",
+  "keywords": [
+    "DOM",
+    "browser",
+    "layout",
+    "isotope",
+    "isotope-layout-mode"
+  ],
+  "main": "fit-columns.js",
+  "name": "isotope-fit-columns",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/metafizzy/isotope-fit-columns.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.4"
+}
