@@ -22,4 +22,5 @@ module blogwaver {
     requires fastjson;
     requires org.apache.logging.log4j;
     requires freemarker.java8;
+    requires jarslink.api;
 }

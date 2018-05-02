@@ -173,6 +173,16 @@
 			<groupId>com.alipay.jarslink</groupId>
 			<artifactId>jarslink-api</artifactId>
 			<version>1.6.1.20180301</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 
